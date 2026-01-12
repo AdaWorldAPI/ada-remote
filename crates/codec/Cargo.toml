@@ -1,0 +1,16 @@
+[package]
+name = "ada-remote-codec"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ada-remote-core = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+# FFmpeg bindings for H.264/VP9 encoding
+# Note: Requires FFmpeg libraries installed on the system
+# ffmpeg-next = { workspace = true }

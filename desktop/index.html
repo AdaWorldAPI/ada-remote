@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ada Remote</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>Ada Remote</h1>
+        <p class="subtitle">Open-source remote desktop solution</p>
+
+        <div class="tabs">
+          <button class="tab-button active" data-tab="host">Host Session</button>
+          <button class="tab-button" data-tab="client">Connect to Session</button>
+        </div>
+
+        <div class="tab-content active" id="host-tab">
+          <h2>Host a Remote Session</h2>
+          <div class="form-group">
+            <label for="host-password">Session Password (optional):</label>
+            <input type="password" id="host-password" placeholder="Leave empty for no password" />
+          </div>
+          <button id="start-host-btn" class="btn btn-primary">Start Hosting</button>
+          <div id="session-info" class="session-info" style="display: none;">
+            <h3>Session Active</h3>
+            <p>Session ID: <strong id="session-id"></strong></p>
+            <p>Share this ID with the person you want to connect with.</p>
+            <button id="disconnect-btn" class="btn btn-secondary">Disconnect</button>
+          </div>
+        </div>
+
+        <div class="tab-content" id="client-tab">
+          <h2>Connect to a Remote Session</h2>
+          <div class="form-group">
+            <label for="client-session-id">Session ID:</label>
+            <input type="text" id="client-session-id" placeholder="Enter 9-digit session ID" />
+          </div>
+          <div class="form-group">
+            <label for="client-password">Password (if required):</label>
+            <input type="password" id="client-password" placeholder="Session password" />
+          </div>
+          <button id="connect-btn" class="btn btn-primary">Connect</button>
+        </div>
+
+        <div class="status-bar">
+          <span id="status-text">Ready</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

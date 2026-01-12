@@ -1,0 +1,24 @@
+[package]
+name = "ada-remote-network"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ada-remote-core = { workspace = true }
+ada-remote-crypto = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+# WebRTC
+webrtc = { workspace = true }
+# QUIC fallback
+quinn = { workspace = true }
+# WebSocket for signaling
+tokio-tungstenite = { workspace = true }
+futures = "0.3"
