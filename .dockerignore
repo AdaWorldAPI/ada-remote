@@ -1,0 +1,32 @@
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+target/
+desktop/node_modules/
+desktop/dist/
+desktop/src-tauri/target/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation
+docs/
+README.md
+LICENSE-MIT
+LICENSE-APACHE
+
+# CI/CD
+.github/
+
+# Desktop app (not needed for relay server)
+desktop/
+
+# Misc
+*.log
+.DS_Store

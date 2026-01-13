@@ -1,0 +1,30 @@
+[Unit]
+Description=Ada Remote Relay Server
+Documentation=https://github.com/AdaWorldAPI/ada-remote
+After=network.target
+
+[Service]
+Type=simple
+User=ada-remote
+Group=ada-remote
+WorkingDirectory=/opt/ada-remote
+ExecStart=/opt/ada-remote/relay-server --bind 0.0.0.0:8080
+Restart=on-failure
+RestartSec=5s
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/ada-remote
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=512
+
+# Environment
+Environment="RUST_LOG=info"
+
+[Install]
+WantedBy=multi-user.target
