@@ -1,0 +1,76 @@
+# Ada Remote Relay Server Configuration
+# Copy this file to config.toml and adjust as needed
+
+[server]
+# Bind address and port
+bind = "0.0.0.0:8080"
+
+# Maximum number of concurrent sessions
+max_sessions = 10000
+
+# Session timeout in seconds (default: 1 hour)
+session_timeout = 3600
+
+[security]
+# Enable TLS/SSL (requires cert and key files)
+enable_tls = false
+
+# TLS certificate file path
+cert_file = "/path/to/cert.pem"
+
+# TLS key file path
+key_file = "/path/to/key.pem"
+
+# Allowed origins for CORS (comma-separated)
+allowed_origins = ["*"]
+
+[turn]
+# Enable TURN relay functionality
+enable_turn = true
+
+# TURN server bind address
+turn_bind = "0.0.0.0:3478"
+
+# Shared secret for TURN authentication
+turn_secret = "change-this-secret"
+
+# Realm for TURN authentication
+turn_realm = "ada-remote.io"
+
+# External IP address (required for NAT traversal)
+# Set this to your server's public IP
+external_ip = "0.0.0.0"
+
+[stun]
+# Enable STUN functionality
+enable_stun = true
+
+# STUN server bind address
+stun_bind = "0.0.0.0:3478"
+
+[logging]
+# Log level: trace, debug, info, warn, error
+level = "info"
+
+# Log format: json, pretty
+format = "pretty"
+
+# Log to file (optional)
+file = "/var/log/ada-remote/relay.log"
+
+[metrics]
+# Enable Prometheus metrics
+enable_metrics = false
+
+# Metrics endpoint
+metrics_bind = "127.0.0.1:9090"
+
+[rate_limiting]
+# Enable rate limiting
+enabled = true
+
+# Maximum connections per IP per minute
+connections_per_minute = 60
+
+# Maximum messages per connection per second
+messages_per_second = 100
